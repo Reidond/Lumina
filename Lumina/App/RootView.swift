@@ -44,7 +44,7 @@ struct RootView: View {
         return NavigationSplitView {
             List(selection: selection) {
                 ForEach(AppModel.Section.allCases) { section in
-                    Label(section.title, systemImage: section.symbol).tag(Optional(section))
+                    Label(section.title, systemImage: section.symbol).tag(section)
                 }
             }
             .navigationTitle("Lumina")
