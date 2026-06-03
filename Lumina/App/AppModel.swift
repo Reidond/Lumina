@@ -41,6 +41,7 @@ final class AppModel {
     var pickerContext: PickerContext?
     var turnstileContext: TurnstileContext?
     var alert: AlertContext?
+    var showingOnboarding = false
 
     let settings: SettingsStore
     let downloads: DownloadManager
@@ -49,6 +50,37 @@ final class AppModel {
         self.settings = settings
         self.downloads = downloads
         self.options = settings.defaultOptions
+        self.showingOnboarding = !settings.didCompleteOnboarding
+    }
+
+    // MARK: - Onboarding
+
+    func finishOnboarding() {
+        settings.didCompleteOnboarding = true
+        showingOnboarding = false
+    }
+
+    func showSetupGuide() {
+        showingOnboarding = true
+    }
+
+    /// Probe the configured instance (`GET /`). Shared by Settings and the onboarding guide.
+    func testConnection() async -> (ok: Bool, message: String) {
+        guard let url = settings.instanceURL, let config = settings.makeConfiguration() else {
+            return (false, String(localized: "Enter a valid instance URL (https://…)."))
+        }
+        let client = CobaltClient(provider: StaticConfigurationProvider(config))
+        do {
+            let info = try await client.fetchInstanceInfo(url: url)
+            var message = String(localized: "Connected")
+            if let version = info.cobalt?.version { message += " · v\(version)" }
+            if info.requiresTurnstile { message += " · " + String(localized: "Turnstile (third-party apps blocked)") }
+            return (true, message)
+        } catch let error as LuminaError {
+            return (false, error.errorDescription ?? String(localized: "Failed"))
+        } catch {
+            return (false, error.localizedDescription)
+        }
     }
 
     /// Re-run a history record's original source link through the current options.

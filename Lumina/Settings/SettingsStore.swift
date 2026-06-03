@@ -38,12 +38,17 @@ final class SettingsStore {
     var saveDestination: SaveDestination {
         didSet { defaults.set(saveDestination.rawValue, forKey: Keys.saveDestination) }
     }
+    var didCompleteOnboarding: Bool {
+        didSet { defaults.set(didCompleteOnboarding, forKey: Keys.didCompleteOnboarding) }
+    }
 
     private let defaults: UserDefaults
     private let credentials: CobaltCredentialStore
     private let bearerStore: BearerTokenStore
 
-    static let defaultInstanceURL = "https://api.cobalt.tools/"
+    // Empty by default: the official api.cobalt.tools blocks third-party apps, so the
+    // onboarding guide prompts the user for their own instance instead.
+    static let defaultInstanceURL = ""
 
     init(defaults: UserDefaults = .standard,
          credentials: CobaltCredentialStore = CobaltCredentialStore(),
@@ -53,6 +58,7 @@ final class SettingsStore {
         self.bearerStore = bearerStore
         self.instanceURLString = defaults.string(forKey: Keys.instanceURL) ?? Self.defaultInstanceURL
         self.saveDestination = SaveDestination(rawValue: defaults.integer(forKey: Keys.saveDestination)) ?? .photosForVisualFilesForAudio
+        self.didCompleteOnboarding = defaults.bool(forKey: Keys.didCompleteOnboarding)
         if let data = defaults.data(forKey: Keys.defaultOptions),
            let decoded = try? JSONDecoder().decode(DownloadOptions.self, from: data) {
             self.defaultOptions = decoded
@@ -120,5 +126,6 @@ final class SettingsStore {
         static let instanceURL = "instanceURLString"
         static let defaultOptions = "defaultOptions"
         static let saveDestination = "saveDestination"
+        static let didCompleteOnboarding = "didCompleteOnboarding"
     }
 }

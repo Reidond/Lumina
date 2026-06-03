@@ -40,7 +40,15 @@ struct SettingsView: View {
             } header: {
                 Text("Cobalt Instance")
             } footer: {
-                Text("Use a self-hosted instance or one that accepts an API key.")
+                Text("Use a self-hosted instance or one that accepts an API key. The public api.cobalt.tools blocks third-party apps.")
+            }
+
+            Section {
+                Button {
+                    app.showSetupGuide()
+                } label: {
+                    Label("Open setup guide", systemImage: "sparkles")
+                }
             }
 
             Section("Saving") {
@@ -75,22 +83,10 @@ struct SettingsView: View {
     }
 
     private func testConnection() async {
-        guard let url = app.settings.instanceURL,
-              let config = app.settings.makeConfiguration() else { return }
         testing = true
-        defer { testing = false }
-        let client = CobaltClient(provider: StaticConfigurationProvider(config))
-        do {
-            let info = try await client.fetchInstanceInfo(url: url)
-            var message = String(localized: "Connected")
-            if let version = info.cobalt?.version { message += " · v\(version)" }
-            if info.requiresTurnstile { message += " · " + String(localized: "Turnstile required") }
-            testResult = TestResult(ok: true, message: message)
-        } catch let error as LuminaError {
-            testResult = TestResult(ok: false, message: error.errorDescription ?? String(localized: "Failed"))
-        } catch {
-            testResult = TestResult(ok: false, message: error.localizedDescription)
-        }
+        let result = await app.testConnection()
+        testResult = TestResult(ok: result.ok, message: result.message)
+        testing = false
     }
 
     private var appVersion: String {

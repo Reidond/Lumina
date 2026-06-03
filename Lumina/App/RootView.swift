@@ -16,11 +16,15 @@ struct RootView: View {
     #endif
 
     var body: some View {
-        platformBody
+        @Bindable var app = app
+        return platformBody
             .dropDestination(for: URL.self) { urls, _ in
                 guard let url = urls.first(where: { ($0.scheme ?? "").hasPrefix("http") }) else { return false }
                 app.ingest(urlString: url.absoluteString)
                 return true
+            }
+            .sheet(isPresented: $app.showingOnboarding) {
+                OnboardingView()
             }
     }
 
