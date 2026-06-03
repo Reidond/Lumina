@@ -70,6 +70,7 @@ final class DownloadManager {
     }
 
     private func apply(_ p: DownloadProgress) {
+        Task { await LiveActivityController.sync(p) }
         if p.isFinished {
             active[p.id] = nil
             lastCompleted = p

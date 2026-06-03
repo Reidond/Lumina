@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0629BC49D59E9B9CC6D0F088 /* DownloadActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC4794B450C64029097F45 /* DownloadActivityAttributes.swift */; };
+		0762D6497E32188FD8D63285 /* DownloadLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE201E778689C0D2E3836C3 /* DownloadLiveActivity.swift */; };
 		1CD3EA841B1DB8E203F386AA /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0EB58241078C67D8D9E71 /* ShareViewController.swift */; };
 		30F26DA99F406B16B025F183 /* LuminaShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2476E91C5FEC3FDE8D10EB16 /* LuminaShare.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		678381525E6DF43FB3BE30CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1882A94661F9AC9045014AE9 /* Foundation.framework */; };
+		6A80794D6B53C487A50D52C3 /* DownloadActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC4794B450C64029097F45 /* DownloadActivityAttributes.swift */; };
+		C395CC94B344AB6C92A2E9A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1882A94661F9AC9045014AE9 /* Foundation.framework */; };
 		D0D0000000000000000000A3 /* LuminaKit in Frameworks */ = {isa = PBXBuildFile; productRef = D0D0000000000000000000A2 /* LuminaKit */; };
+		E6EFCFAE07382674D13ED469 /* LuminaWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 992D8C68395D2BDFE93A3A40 /* LuminaWidgets.appex */; platformFilters = (ios, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F789FF17043672427EB1D327 /* LuminaWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E4F06470A0D032F7AC1666 /* LuminaWidgetsBundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		051A345F438DAF3B7B6CFAB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 218CCE1F2FD0752200F94297 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E216E3624324DD02C60A5B5B;
+			remoteInfo = LuminaWidgets;
+		};
 		0BDF867DC186397BD41B2790 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 218CCE1F2FD0752200F94297 /* Project object */;
@@ -45,6 +58,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				30F26DA99F406B16B025F183 /* LuminaShare.appex in Embed Foundation Extensions */,
+				E6EFCFAE07382674D13ED469 /* LuminaWidgets.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,13 +66,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0ABC4794B450C64029097F45 /* DownloadActivityAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DownloadActivityAttributes.swift; sourceTree = "<group>"; };
 		0DA0EB58241078C67D8D9E71 /* ShareViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		1882A94661F9AC9045014AE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		218CCE272FD0752300F94297 /* Lumina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CCE362FD0752500F94297 /* LuminaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuminaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CCE402FD0752500F94297 /* LuminaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuminaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2476E91C5FEC3FDE8D10EB16 /* LuminaShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LuminaShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		33E4F06470A0D032F7AC1666 /* LuminaWidgetsBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LuminaWidgetsBundle.swift; sourceTree = "<group>"; };
+		9013E5B2C1B8EFEFB4D9EE1A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		992D8C68395D2BDFE93A3A40 /* LuminaWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LuminaWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD429A92BE6F250DE021A307 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEE201E778689C0D2E3836C3 /* DownloadLiveActivity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DownloadLiveActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -116,6 +135,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C880FAF6DD4B745FBF1A5B22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C395CC94B344AB6C92A2E9A8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -136,6 +163,8 @@
 				218CCE282FD0752300F94297 /* Products */,
 				D23EA738F105E7AF08E434B9 /* Frameworks */,
 				351CBA8FF93143C6FD37E6C1 /* LuminaShare */,
+				98054AEF29FC17961B00F294 /* Shared */,
+				474A8866C434E5C652F82A7B /* LuminaWidgets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +175,7 @@
 				218CCE362FD0752500F94297 /* LuminaTests.xctest */,
 				218CCE402FD0752500F94297 /* LuminaUITests.xctest */,
 				2476E91C5FEC3FDE8D10EB16 /* LuminaShare.appex */,
+				992D8C68395D2BDFE93A3A40 /* LuminaWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +187,26 @@
 				AD429A92BE6F250DE021A307 /* Info.plist */,
 			);
 			path = LuminaShare;
+			sourceTree = "<group>";
+		};
+		474A8866C434E5C652F82A7B /* LuminaWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				FEE201E778689C0D2E3836C3 /* DownloadLiveActivity.swift */,
+				33E4F06470A0D032F7AC1666 /* LuminaWidgetsBundle.swift */,
+				9013E5B2C1B8EFEFB4D9EE1A /* Info.plist */,
+			);
+			name = LuminaWidgets;
+			path = LuminaWidgets;
+			sourceTree = "<group>";
+		};
+		98054AEF29FC17961B00F294 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0ABC4794B450C64029097F45 /* DownloadActivityAttributes.swift */,
+			);
+			name = Shared;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		D23EA738F105E7AF08E434B9 /* Frameworks */ = {
@@ -183,6 +233,7 @@
 			);
 			dependencies = (
 				A17A5CA468DBA61B4C2F3D89 /* PBXTargetDependency */,
+				52F71217DB74895C3CF71AA6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				218CCE292FD0752300F94297 /* Lumina */,
@@ -254,6 +305,23 @@
 			productReference = 2476E91C5FEC3FDE8D10EB16 /* LuminaShare.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		E216E3624324DD02C60A5B5B /* LuminaWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B04EBC4D17C57C73F7CCD773 /* Build configuration list for PBXNativeTarget "LuminaWidgets" */;
+			buildPhases = (
+				7907FC27B5ADA7C30DECA725 /* Sources */,
+				C880FAF6DD4B745FBF1A5B22 /* Frameworks */,
+				B013CC3BF4D84D9569573D94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LuminaWidgets;
+			productName = LuminaWidgets;
+			productReference = 992D8C68395D2BDFE93A3A40 /* LuminaWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -298,6 +366,7 @@
 				218CCE352FD0752500F94297 /* LuminaTests */,
 				218CCE3F2FD0752500F94297 /* LuminaUITests */,
 				2DEFFB760CA91E8BD26CB3FC /* LuminaShare */,
+				E216E3624324DD02C60A5B5B /* LuminaWidgets */,
 			);
 		};
 /* End PBXProject section */
@@ -324,6 +393,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B013CC3BF4D84D9569573D94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C47106BE51345F4AF85A44F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0629BC49D59E9B9CC6D0F088 /* DownloadActivityAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +440,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7907FC27B5ADA7C30DECA725 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0762D6497E32188FD8D63285 /* DownloadLiveActivity.swift in Sources */,
+				F789FF17043672427EB1D327 /* LuminaWidgetsBundle.swift in Sources */,
+				6A80794D6B53C487A50D52C3 /* DownloadActivityAttributes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -376,6 +463,15 @@
 			target = 218CCE262FD0752200F94297 /* Lumina */;
 			targetProxy = 218CCE412FD0752500F94297 /* PBXContainerItemProxy */;
 		};
+		52F71217DB74895C3CF71AA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LuminaWidgets;
+			platformFilters = (
+				ios,
+			);
+			target = E216E3624324DD02C60A5B5B /* LuminaWidgets */;
+			targetProxy = 051A345F438DAF3B7B6CFAB7 /* PBXContainerItemProxy */;
+		};
 		A17A5CA468DBA61B4C2F3D89 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LuminaShare;
@@ -386,6 +482,34 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0DBF43AECFF5A4C1A94A2CBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K567Y7B93R;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LuminaWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.andriishafar.Lumina.Widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		218CCE482FD0752500F94297 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -702,6 +826,33 @@
 			};
 			name = Release;
 		};
+		5A59304371A825F65BAD02C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K567Y7B93R;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LuminaWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.andriishafar.Lumina.Widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		61F442156AD52CE5AF09CD77 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -792,6 +943,15 @@
 			buildConfigurations = (
 				218CCE512FD0752500F94297 /* Debug */,
 				218CCE522FD0752500F94297 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B04EBC4D17C57C73F7CCD773 /* Build configuration list for PBXNativeTarget "LuminaWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DBF43AECFF5A4C1A94A2CBA /* Release */,
+				5A59304371A825F65BAD02C4 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
