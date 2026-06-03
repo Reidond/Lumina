@@ -24,3 +24,6 @@ xcuserdata/
 
 # Build
 build/
+
+# FFmpeg build intermediates (the assembled xcframework IS committed)
+LuminaKit/Frameworks/build/

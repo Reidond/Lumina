@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Minimal entitlements that a free "Personal" Apple Developer team can provision.
+	  iCloud (CloudKit), App Groups, and a shared Keychain group are intentionally NOT
+	  here — personal teams can't sign them. The storage layer falls back to a local
+	  on-disk store when the App Group is absent (see LuminaStore.container()).
+
+	  To enable iCloud sync + the Share Extension / Widget data sharing, switch to a paid
+	  Apple Developer Program team and add back:
+	    com.apple.security.application-groups   -> group.xyz.andriishafar.Lumina
+	    com.apple.developer.icloud-services     -> CloudKit
+	    com.apple.developer.icloud-container-identifiers -> iCloud.xyz.andriishafar.Lumina
+	    keychain-access-groups                  -> $(AppIdentifierPrefix)xyz.andriishafar.Lumina.shared
+	-->
+	<key>com.apple.security.network.client</key>
+	<true/>
+</dict>
+</plist>

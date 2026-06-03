@@ -7,26 +7,29 @@
 
 import SwiftUI
 import SwiftData
+import LuminaKit
 
 @main
 struct LuminaApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+    let modelContainer: ModelContainer
+    @State private var appModel: AppModel
 
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    init() {
+        // Prefer the shared App Group + CloudKit store; fall back to a local store so the
+        // app still launches on a device/simulator without iCloud configured.
+        let container = (try? LuminaStore.container()) ?? (try! LuminaStore.container(inMemory: true))
+        modelContainer = container
+
+        let settings = SettingsStore()
+        let downloads = DownloadManager(container: container)
+        _appModel = State(initialValue: AppModel(settings: settings, downloads: downloads))
+    }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environment(appModel)
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(modelContainer)
     }
 }
