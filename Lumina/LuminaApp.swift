@@ -29,6 +29,7 @@ struct LuminaApp: App {
         WindowGroup(id: "main") {
             RootView()
                 .environment(appModel)
+                .onOpenURL { url in handleIncoming(url) }
         }
         .modelContainer(modelContainer)
 
@@ -40,5 +41,22 @@ struct LuminaApp: App {
         }
         .menuBarExtraStyle(.window)
         #endif
+    }
+
+    /// Handle `lumina://download?url=<encoded>` from the Share Extension / widget deep links.
+    @MainActor
+    private func handleIncoming(_ url: URL) {
+        guard url.scheme == "lumina" else { return }
+        let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        switch url.host {
+        case "download":
+            if let target = components?.queryItems?.first(where: { $0.name == "url" })?.value {
+                appModel.ingest(urlString: target)
+            }
+        case "history":
+            appModel.section = .history
+        default:
+            break
+        }
     }
 }

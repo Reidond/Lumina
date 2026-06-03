@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CD3EA841B1DB8E203F386AA /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0EB58241078C67D8D9E71 /* ShareViewController.swift */; };
+		30F26DA99F406B16B025F183 /* LuminaShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2476E91C5FEC3FDE8D10EB16 /* LuminaShare.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		678381525E6DF43FB3BE30CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1882A94661F9AC9045014AE9 /* Foundation.framework */; };
 		D0D0000000000000000000A3 /* LuminaKit in Frameworks */ = {isa = PBXBuildFile; productRef = D0D0000000000000000000A2 /* LuminaKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0BDF867DC186397BD41B2790 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 218CCE1F2FD0752200F94297 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DEFFB760CA91E8BD26CB3FC;
+			remoteInfo = LuminaShare;
+		};
 		218CCE372FD0752500F94297 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 218CCE1F2FD0752200F94297 /* Project object */;
@@ -27,31 +37,63 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7F3ACF3CCB01CD37FC40804E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				30F26DA99F406B16B025F183 /* LuminaShare.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0DA0EB58241078C67D8D9E71 /* ShareViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		1882A94661F9AC9045014AE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		218CCE272FD0752300F94297 /* Lumina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CCE362FD0752500F94297 /* LuminaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuminaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CCE402FD0752500F94297 /* LuminaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuminaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2476E91C5FEC3FDE8D10EB16 /* LuminaShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LuminaShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD429A92BE6F250DE021A307 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		218CCE292FD0752300F94297 /* Lumina */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = Lumina;
 			sourceTree = "<group>";
 		};
 		218CCE392FD0752500F94297 /* LuminaTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = LuminaTests;
 			sourceTree = "<group>";
 		};
 		218CCE432FD0752500F94297 /* LuminaUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = LuminaUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1FB38E6C78FAA6B464EC765B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				678381525E6DF43FB3BE30CA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		218CCE242FD0752200F94297 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02C92E26E0E0B69CD7BFA0A1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1882A94661F9AC9045014AE9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		218CCE1E2FD0752200F94297 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +134,8 @@
 				218CCE392FD0752500F94297 /* LuminaTests */,
 				218CCE432FD0752500F94297 /* LuminaUITests */,
 				218CCE282FD0752300F94297 /* Products */,
+				D23EA738F105E7AF08E434B9 /* Frameworks */,
+				351CBA8FF93143C6FD37E6C1 /* LuminaShare */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,8 +145,26 @@
 				218CCE272FD0752300F94297 /* Lumina.app */,
 				218CCE362FD0752500F94297 /* LuminaTests.xctest */,
 				218CCE402FD0752500F94297 /* LuminaUITests.xctest */,
+				2476E91C5FEC3FDE8D10EB16 /* LuminaShare.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		351CBA8FF93143C6FD37E6C1 /* LuminaShare */ = {
+			isa = PBXGroup;
+			children = (
+				0DA0EB58241078C67D8D9E71 /* ShareViewController.swift */,
+				AD429A92BE6F250DE021A307 /* Info.plist */,
+			);
+			path = LuminaShare;
+			sourceTree = "<group>";
+		};
+		D23EA738F105E7AF08E434B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02C92E26E0E0B69CD7BFA0A1 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,10 +177,12 @@
 				218CCE232FD0752200F94297 /* Sources */,
 				218CCE242FD0752200F94297 /* Frameworks */,
 				218CCE252FD0752200F94297 /* Resources */,
+				7F3ACF3CCB01CD37FC40804E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A17A5CA468DBA61B4C2F3D89 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				218CCE292FD0752300F94297 /* Lumina */,
@@ -140,8 +212,6 @@
 				218CCE392FD0752500F94297 /* LuminaTests */,
 			);
 			name = LuminaTests;
-			packageProductDependencies = (
-			);
 			productName = LuminaTests;
 			productReference = 218CCE362FD0752500F94297 /* LuminaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -163,11 +233,26 @@
 				218CCE432FD0752500F94297 /* LuminaUITests */,
 			);
 			name = LuminaUITests;
-			packageProductDependencies = (
-			);
 			productName = LuminaUITests;
 			productReference = 218CCE402FD0752500F94297 /* LuminaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		2DEFFB760CA91E8BD26CB3FC /* LuminaShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3EA83814CDCD0B6E804CA74 /* Build configuration list for PBXNativeTarget "LuminaShare" */;
+			buildPhases = (
+				656A715BD144C0D32A9DC342 /* Sources */,
+				1FB38E6C78FAA6B464EC765B /* Frameworks */,
+				C47106BE51345F4AF85A44F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LuminaShare;
+			productName = LuminaShare;
+			productReference = 2476E91C5FEC3FDE8D10EB16 /* LuminaShare.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -212,6 +297,7 @@
 				218CCE262FD0752200F94297 /* Lumina */,
 				218CCE352FD0752500F94297 /* LuminaTests */,
 				218CCE3F2FD0752500F94297 /* LuminaUITests */,
+				2DEFFB760CA91E8BD26CB3FC /* LuminaShare */,
 			);
 		};
 /* End PBXProject section */
@@ -232,6 +318,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		218CCE3E2FD0752500F94297 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47106BE51345F4AF85A44F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -262,6 +355,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		656A715BD144C0D32A9DC342 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CD3EA841B1DB8E203F386AA /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -274,6 +375,13 @@
 			isa = PBXTargetDependency;
 			target = 218CCE262FD0752200F94297 /* Lumina */;
 			targetProxy = 218CCE412FD0752500F94297 /* PBXContainerItemProxy */;
+		};
+		A17A5CA468DBA61B4C2F3D89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LuminaShare;
+			platformFilter = ios;
+			target = 2DEFFB760CA91E8BD26CB3FC /* LuminaShare */;
+			targetProxy = 0BDF867DC186397BD41B2790 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -408,6 +516,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Lumina-Info.plist";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Lumina saves downloaded photos and videos to your library.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -456,6 +565,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Lumina-Info.plist";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Lumina saves downloaded photos and videos to your library.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -592,6 +702,61 @@
 			};
 			name = Release;
 		};
+		61F442156AD52CE5AF09CD77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K567Y7B93R;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LuminaShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.andriishafar.Lumina.Share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D987249C19BAB88D8164C536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K567Y7B93R;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LuminaShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.andriishafar.Lumina.Share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -627,6 +792,15 @@
 			buildConfigurations = (
 				218CCE512FD0752500F94297 /* Debug */,
 				218CCE522FD0752500F94297 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3EA83814CDCD0B6E804CA74 /* Build configuration list for PBXNativeTarget "LuminaShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61F442156AD52CE5AF09CD77 /* Release */,
+				D987249C19BAB88D8164C536 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
