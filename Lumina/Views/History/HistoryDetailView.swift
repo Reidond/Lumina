@@ -68,6 +68,7 @@ struct HistoryDetailView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: 320)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
+                .draggableFile(url)
             case .unknown:
                 fileIcon
             }

@@ -26,10 +26,19 @@ struct LuminaApp: App {
     }
 
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(id: "main") {
             RootView()
                 .environment(appModel)
         }
         .modelContainer(modelContainer)
+
+        #if os(macOS)
+        MenuBarExtra("Lumina", systemImage: "arrow.down.circle.fill") {
+            MenuBarContentView()
+                .environment(appModel)
+                .modelContainer(modelContainer)
+        }
+        .menuBarExtraStyle(.window)
+        #endif
     }
 }

@@ -31,6 +31,9 @@ struct DownloadProgressRow: View {
             }
         }
         .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(progress.filename.isEmpty ? String(localized: "Processing") : progress.filename)
+        .accessibilityValue(statusText)
     }
 
     @ViewBuilder private var icon: some View {

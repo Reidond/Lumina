@@ -80,6 +80,7 @@ struct HistoryRow: View {
             statusBadge
         }
         .padding(.vertical, 2)
+        .draggableFile(record.localFileURL)
     }
 
     private var subtitle: String {

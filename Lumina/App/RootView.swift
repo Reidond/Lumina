@@ -16,6 +16,15 @@ struct RootView: View {
     #endif
 
     var body: some View {
+        platformBody
+            .dropDestination(for: URL.self) { urls, _ in
+                guard let url = urls.first(where: { ($0.scheme ?? "").hasPrefix("http") }) else { return false }
+                app.ingest(urlString: url.absoluteString)
+                return true
+            }
+    }
+
+    @ViewBuilder private var platformBody: some View {
         #if os(macOS)
         splitView
         #else

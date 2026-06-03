@@ -83,6 +83,18 @@ struct PickerItemCell: View {
                 .background(Circle().fill(.black.opacity(0.25)))
                 .padding(6)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityAddTraits(.isButton)
+        .accessibilityLabel(Text(accessibilityLabel))
+        .accessibilityValue(selected ? Text("Selected") : Text("Not selected"))
+    }
+
+    private var accessibilityLabel: String {
+        switch item.type {
+        case .photo: String(localized: "Photo")
+        case .video: String(localized: "Video")
+        case .gif: String(localized: "GIF")
+        }
     }
 
     private var thumbnailURL: URL? {
