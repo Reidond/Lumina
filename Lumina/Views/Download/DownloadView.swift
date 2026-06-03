@@ -99,11 +99,13 @@ struct DownloadView: View {
             Button {
                 Task { await app.fetch() }
             } label: {
-                if app.isFetching {
-                    ProgressView()
-                } else {
-                    Label("Fetch", systemImage: "arrow.down")
-                }
+                Label("Fetch", systemImage: "arrow.down")
+                    .opacity(app.isFetching ? 0 : 1)
+                    .overlay {
+                        if app.isFetching {
+                            ProgressView().controlSize(.small)
+                        }
+                    }
             }
             .buttonStyle(.borderedProminent)
             .disabled(app.urlText.trimmingCharacters(in: .whitespaces).isEmpty || app.isFetching)

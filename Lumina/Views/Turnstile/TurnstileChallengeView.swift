@@ -15,10 +15,16 @@ struct TurnstileChallengeView: View {
 
     var body: some View {
         NavigationStack {
-            TurnstileWebView(sitekey: context.sitekey, baseURL: baseURL) { token in
-                Task { await app.completeTurnstile(token: token) }
+            VStack(spacing: 0) {
+                Text("Complete the Cloudflare challenge to verify with this instance.")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                TurnstileWebView(sitekey: context.sitekey, baseURL: baseURL) { token in
+                    Task { await app.completeTurnstile(token: token) }
+                }
             }
-            .ignoresSafeArea(edges: .bottom)
             .navigationTitle("Verify you’re human")
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
@@ -30,7 +36,7 @@ struct TurnstileChallengeView: View {
             }
         }
         #if os(iOS)
-        .presentationDetents([.medium, .large])
+        .presentationDetents([.large])
         #endif
     }
 
@@ -64,8 +70,6 @@ struct TurnstileWebView: PlatformViewRepresentable {
         configuration.userContentController.add(coordinator, name: "turnstile")
         let webView = WKWebView(frame: .zero, configuration: configuration)
         #if os(iOS)
-        webView.isOpaque = false
-        webView.backgroundColor = .clear
         webView.scrollView.isScrollEnabled = false
         #endif
         webView.loadHTMLString(Self.html(sitekey: sitekey), baseURL: baseURL)

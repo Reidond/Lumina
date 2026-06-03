@@ -113,7 +113,11 @@ final class AppModel {
             urlText = context.pendingURL
             await fetch()
         } catch let error as LuminaError {
-            alert = AlertContext(error)
+            if case .auth = error {
+                alert = AlertContext(.transport(String(localized: "This instance rejected the verification. Public instances like api.cobalt.tools block third-party apps — point Lumina at a self-hosted instance, or one that accepts an API key, in Settings.")))
+            } else {
+                alert = AlertContext(error)
+            }
         } catch {
             alert = AlertContext(.transport(error.localizedDescription))
         }
