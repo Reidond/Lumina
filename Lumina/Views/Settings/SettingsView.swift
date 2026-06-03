@@ -16,13 +16,13 @@ struct SettingsView: View {
         @Bindable var settings = app.settings
         Form {
             Section {
-                TextField("https://your-instance", text: $settings.instanceURLString)
+                TextField("URL", text: $settings.instanceURLString, prompt: Text(verbatim: "https://your-instance"))
                     .autocorrectionDisabled()
                     #if os(iOS)
                     .textInputAutocapitalization(.never)
                     .keyboardType(.URL)
                     #endif
-                SecureField("API key (optional)", text: $apiKey)
+                SecureField("API key", text: $apiKey, prompt: Text("optional"))
                 Button {
                     Task { await testConnection() }
                 } label: {

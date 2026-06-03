@@ -85,16 +85,29 @@ struct CobaltClientTests {
     }
 
     @Test func instanceInfoDecodes() async throws {
+        // startTime arrives as a STRING from the real public instance — must not fail decode.
         let body = #"""
-        {"cobalt":{"version":"10.0","url":"https://x.test","turnstileSitekey":"0x4AAA","services":["youtube"]},
+        {"cobalt":{"version":"11.7.1","url":"https://x.test","startTime":"1779109885061",
+         "turnstileSitekey":"0x4AAA","services":["youtube"]},
          "git":{"commit":"abc","branch":"main"}}
         """#
         let stub = MockURLProtocol.Stub(statusCode: 200, body: Data(body.utf8))
         let (client, id) = MockURLProtocol.makeClient(stub: stub)
         defer { MockURLProtocol.remove(id) }
         let info = try await client.fetchInstanceInfo(url: URL(string: "https://x.test")!)
-        #expect(info.cobalt?.version == "10.0")
+        #expect(info.cobalt?.version == "11.7.1")
+        #expect(info.cobalt?.startTime == "1779109885061")
         #expect(info.requiresTurnstile == true)
+    }
+
+    @Test func instanceInfoDecodesNumericStartTime() async throws {
+        // …and as a NUMBER from other instances.
+        let body = #"{"cobalt":{"version":"10.0","startTime":1779109885061}}"#
+        let stub = MockURLProtocol.Stub(statusCode: 200, body: Data(body.utf8))
+        let (client, id) = MockURLProtocol.makeClient(stub: stub)
+        defer { MockURLProtocol.remove(id) }
+        let info = try await client.fetchInstanceInfo(url: URL(string: "https://x.test")!)
+        #expect(info.cobalt?.startTime == "1779109885061")
     }
 }
 
