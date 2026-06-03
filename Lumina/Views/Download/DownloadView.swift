@@ -77,12 +77,10 @@ struct DownloadView: View {
                 .buttonStyle(.borderless)
                 .foregroundStyle(.secondary)
             }
-            PasteButton(payloadType: URL.self) { urls in
-                guard let url = urls.first else { return }
-                Task { @MainActor in app.urlText = url.absoluteString }
-            }
-            .labelStyle(.iconOnly)
-            .buttonBorderShape(.circle)
+            PasteLinkButton { link in app.urlText = link }
+                .labelStyle(.iconOnly)
+                .buttonStyle(.borderless)
+                .foregroundStyle(.tint)
         }
     }
 
